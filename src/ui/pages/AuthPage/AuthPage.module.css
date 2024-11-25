@@ -1,0 +1,104 @@
+/* Container for the entire page */
+.pageContainer {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: row;
+    /* Default layout: leftSection and rightSection side by side */
+    overflow: hidden;
+    /* Prevents scrollbars if the content overflows */
+}
+
+/* Left Section (Dark Purple Square) */
+.leftSection {
+    background-size: cover;
+    /* Makes the image cover the full section */
+    background-position: right;
+    /* Centers the image */
+    background-repeat: no-repeat;
+    /* Ensures no tiling */
+    width: 50%;
+    height: 100%;
+    transition: all 0.3s ease;
+    /* Smooth transition for responsiveness */
+}
+
+/* Right Section: Content Centered */
+.rightSection {
+    width: 67%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* Optional padding for spacing */
+    flex-direction: column;
+    /* Ensure content is stacked vertically */
+}
+
+/* Box for the content inside the right section */
+.contentBox {
+    text-align: center;
+    width: 100%;
+}
+
+/* Logo placeholder */
+.logoPlaceholder {
+    width: 100px;
+    height: 100px;
+    background-color: #dbb4ff;
+    /* Light Purple */
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+/* Slogan */
+.slogan {
+    margin-top: 20px;
+    color: #5c28a0;
+    /* Darker Purple */
+}
+
+/* Facebook Login Button Placeholder */
+.fbButton {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #4267B2;
+    /* Facebook Blue */
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Media Queries for Mobile Design */
+
+/* Mobile: Swap layout for smaller screens */
+@media (max-width: 480px) {
+    .pageContainer {
+        flex-direction: column;
+        /* Stack leftSection and rightSection vertically */
+    }
+
+    .leftSection {
+        width: 100%;
+        /* Full width on mobile */
+        height: 45%;
+        /* Image takes up 40% of the screen height */
+        background-position: center;
+        /* Ensure the image is centered */
+        background-size: contain
+    }
+
+    .rightSection {
+        margin-top: 15%;
+        width: 100%;
+        /* Full width on mobile */
+        height: 40%;
+        /* Content takes up the remaining space */
+        justify-content: flex-start;
+        /* Align the content to the top */
+        padding: 45px;
+        /* Optional padding for spacing */
+    }
+}
