@@ -1,29 +1,9 @@
 .container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 82vh;
     background-color: #f7f7f7;
     direction: rtl;
-}
-
-.topBar {
-    background-color: #6a0dad;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-}
-
-.headerContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-}
-
-.logo {
-    height: 40px;
 }
 
 .helloMessage {
@@ -71,17 +51,6 @@
     transform: scale(1.1);
 }
 
-.footer {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    font-size: 14px;
-    line-height: 60px;
-}
-
-.heart {
-    color: red;
-}
 
 /* Mobile Styles */
 @media (max-width: 480px) {

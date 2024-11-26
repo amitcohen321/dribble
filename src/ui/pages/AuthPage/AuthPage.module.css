@@ -42,9 +42,10 @@
 
 /* Logo placeholder */
 .logoPlaceholder {
+    background-image: url("../../../assets/dribble-logo.png");
     width: 100px;
     height: 100px;
-    background-color: #dbb4ff;
+    /* background-color: #dbb4ff; */
     /* Light Purple */
     border-radius: 50%;
     margin: 0 auto;

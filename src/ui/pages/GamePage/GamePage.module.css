@@ -1,0 +1,131 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f7f7f7;
+    direction: rtl;
+}
+
+.topBar {
+    background-color: #6a0dad;
+    color: white;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    flex-direction: row-reverse;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    flex-direction: row-reverse;
+}
+
+.logo {
+    height: 40px;
+}
+
+.helloMessage {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: right;
+}
+
+.shareButton {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.gameDetails,
+.playersSection,
+.teamsSection {
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.googleMapsButton {
+    margin: 10px 0;
+}
+
+.paymentBox {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.playersList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.playerCard {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.participate {
+    border: 2px solid green;
+}
+
+.bench {
+    border: 2px solid orange;
+}
+
+.substitute {
+    border: 2px solid red;
+}
+
+.addPlayerCard {
+    border: 2px dashed #6a0dad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.teamBox {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.shuffleButton {
+    margin-top: 10px;
+}
+
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.heart {
+    color: red;
+}
