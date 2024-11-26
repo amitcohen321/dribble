@@ -1,6 +1,6 @@
 import { Box, Title, Text } from "@mantine/core";
 import styles from "./AuthPage.module.css"; // Import CSS module
-import dribblerImage from "../../../assets/auth-page/dribbler1.png";
+import dribblerImage from "../../../assets/auth-page/dribbler1.jpeg";
 
 const AuthPage = () => {
   return (
