@@ -1,0 +1,109 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f7f7f7;
+    direction: rtl;
+}
+
+.topBar {
+    background-color: #6a0dad;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    height: 40px;
+}
+
+.helloMessage {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+    /* RTL layout */
+    gap: 20px;
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    margin: 10px;
+}
+
+.gameBox {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    width: 350px;
+    /* Slightly smaller width */
+    height: 100px;
+    /* Reduced height */
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addGameButton {
+    position: fixed;
+    bottom: 30px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    right: 25px;
+}
+
+.addGameButton:hover {
+    transform: scale(1.1);
+}
+
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    line-height: 60px;
+}
+
+.heart {
+    color: red;
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .dashboard {
+        flex-direction: column;
+        /* Stack cards vertically */
+        justify-content: flex-start;
+        align-items: center;
+        /* Center cards horizontally */
+        gap: 15px;
+        /* Reduced gap for smaller screens */
+        padding: 30px;
+        margin: 10px;
+    }
+
+    .gameBox {
+        width: 90%;
+
+        /* Full-width minus margins */
+        /* max-width: 300px; */
+        /* Limit width to prevent oversized cards */
+    }
+
+
+}

@@ -3,28 +3,27 @@
     display: flex;
     height: 100vh;
     width: 100vw;
-    flex-direction: row;
-    /* Default layout: leftSection and rightSection side by side */
+    flex-direction: row-reverse;
     overflow: hidden;
-    /* Prevents scrollbars if the content overflows */
 }
 
 /* Left Section (Dark Purple Square) */
-.leftSection {
+.imageSection {
+    background-image: url("../../../assets/auth-page/dribbler-auth-page.png");
     background-size: cover;
     /* Makes the image cover the full section */
     background-position: right;
     /* Centers the image */
     background-repeat: no-repeat;
     /* Ensures no tiling */
-    width: 50%;
+    width: 65%;
     height: 100%;
     transition: all 0.3s ease;
     /* Smooth transition for responsiveness */
 }
 
 /* Right Section: Content Centered */
-.rightSection {
+.authSection {
     width: 67%;
     display: flex;
     justify-content: center;
@@ -73,14 +72,12 @@
 
 /* Media Queries for Mobile Design */
 
-/* Mobile: Swap layout for smaller screens */
 @media (max-width: 480px) {
     .pageContainer {
         flex-direction: column;
-        /* Stack leftSection and rightSection vertically */
     }
 
-    .leftSection {
+    .imageSection {
         width: 100%;
         /* Full width on mobile */
         height: 45%;
@@ -90,8 +87,8 @@
         background-size: contain
     }
 
-    .rightSection {
-        margin-top: 15%;
+    .authSection {
+        margin-top: 11%;
         width: 100%;
         /* Full width on mobile */
         height: 40%;
