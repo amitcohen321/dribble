@@ -6,49 +6,15 @@
     direction: rtl;
 }
 
-.topBar {
-    background-color: #6a0dad;
-    color: white;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    flex-direction: row-reverse;
-}
-
-.headerContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    flex-direction: row-reverse;
-}
-
-.logo {
-    height: 40px;
-}
-
-.helloMessage {
-    font-size: 18px;
-    font-weight: 500;
-    text-align: right;
-}
-
-.shareButton {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-}
-
 .content {
+    max-width: 95% !important;
+    min-width: 95% !important;
     flex: 1;
     padding: 20px;
     overflow-y: auto;
 }
 
-.gameDetails,
+.gameDetailsSection,
 .playersSection,
 .teamsSection {
     margin-bottom: 30px;
@@ -71,7 +37,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: flex-end;
 }
 
 .playerCard {
@@ -81,30 +46,25 @@
     width: 150px;
     height: 80px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+}
+
+.addPlayerCard {
+    width: 150px;
+    align-items: center;
+    cursor: pointer;
 }
 
 .participate {
     border: 2px solid green;
 }
 
-.bench {
+.substitute {
     border: 2px solid orange;
 }
 
-.substitute {
+.bench {
     border: 2px solid red;
-}
-
-.addPlayerCard {
-    border: 2px dashed #6a0dad;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
 }
 
 .teamBox {
@@ -118,14 +78,72 @@
     margin-top: 10px;
 }
 
-.footer {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    font-size: 14px;
-    line-height: 40px;
+.actionsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    margin-top: 25px;
 }
 
-.heart {
-    color: red;
+.gameMetaContainer {
+    display: flex;
+    justify-content: space-between
+}
+
+.shareButton {
+    top: 10px;
+}
+
+.actionButtonMaps,
+.actionButtonPayment {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+}
+
+h3 {
+    margin-bottom: 5px !important;
+}
+
+
+
+
+@media (max-width: 480px) {
+
+    .actionsContainer {
+        width: 100%;
+        margin-top: 25px;
+    }
+
+    .actionButtonMaps,
+    .actionButtonPayment,
+    .shuffleButton {
+        width: 100%;
+        text-align: center;
+    }
+
+    .playerCard {
+        width: 160px;
+    }
+
+    .addPlayerCard {
+        width: 160px;
+        flex-grow: 0;
+    }
+
+    .playersList {
+        justify-content: space-between;
+    }
+
+    .playersSection {
+        text-align: center;
+    }
+
+    .teamsSection {
+        text-align: center;
+    }
+
+    .teamBox {
+        margin-bottom: 20px;
+    }
 }

@@ -6,8 +6,14 @@ import {
   Button,
   ActionIcon,
   Grid,
+  Box,
 } from "@mantine/core";
-import { IconPlus, IconArrowsShuffle, IconShare } from "@tabler/icons-react";
+import {
+  IconPlus,
+  IconArrowsShuffle,
+  IconShare,
+  IconShirt,
+} from "@tabler/icons-react";
 import styles from "./GamePage.module.css";
 import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
@@ -29,6 +35,9 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
       {
         players: ["שחקן 4", "שחקן 5", "שחקן 6"],
       },
+      {
+        players: ["שחקן 4", "שחקן 5", "שחקן 6"],
+      },
     ],
   };
 
@@ -37,63 +46,66 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
     { name: "שחקן1", status: "בספסל" },
     { name: "שחקן1", status: "במגרש" },
     { name: "שחקן1", status: "בספסל" },
-    { name: "שחקן1", status: "במגרש" },
-    { name: "שחקן1", status: "מחליף" },
+
   ];
 
   return (
     <div className={styles.container}>
       <Header />
-      <ActionIcon
-        className={styles.shareButton}
-        size={60}
-        radius="xl"
-        variant="light"
-        color="violet"
-        style={{
-          position: "fixed",
-          top: "130px",
-          left: "40px",
-          bottom: "90px",
-        }}
-      >
-        <IconShare />
-      </ActionIcon>
-      {/* Game Details Section */}
       <Container fluid className={styles.content}>
-        <section className={styles.gameDetails}>
-          <Title order={3}>{game.name}</Title>
-          <Text>תאריך: {game.date}</Text>
-          <Text>מיקום: {game.location}</Text>
-          <Button
-            component="a"
-            href={`https://maps.google.com?q=${encodeURIComponent(
-              game.location
-            )}`}
-            target="_blank"
-            variant="light"
-            color="violet"
-            className={styles.googleMapsButton}
-          >
-            פתח בגוגל מפות
-          </Button>
-          <br></br>
-          <Button
-            variant="filled"
-            color="violet"
-            onClick={() => alert("Payment link clicked")}
-          >
-            שלם עכשיו
-          </Button>
+        <section className={styles.gameDetailsSection}>
+          <div className={styles.gameMetaContainer}>
+            <Box className={styles.gameDataContainer}>
+              <Title order={3}>{game.name}</Title>
+              <Text>תאריך: {game.date}</Text>
+              <Text>מיקום: {game.location}</Text>
+            </Box>
+            <ActionIcon
+              className={styles.shareButton}
+              size={60}
+              radius="xl"
+              variant="light"
+              color="violet"
+            >
+              {" "}
+              <IconShare />{" "}
+            </ActionIcon>
+          </div>
+
+          <Box className={styles.actionsContainer}>
+            <Button
+              component="a"
+              href={`https://maps.google.com?q=${encodeURIComponent(
+                game.location
+              )}`}
+              target="_blank"
+              variant="light"
+              color="violet"
+              className={styles.actionButtonMaps}
+            >
+              ניווט למגרש
+            </Button>
+            <Button
+              variant="filled"
+              color="violet"
+              onClick={() => alert("Payment link clicked")}
+              className={styles.actionButtonPayment}
+            >
+              תשלום
+            </Button>
+          </Box>
         </section>
 
-        {/* Player List Section */}
         <section className={styles.playersSection}>
-          <Title order={4}>
-            שחקנים ({players.filter((p) => p.status === "participate").length}/
+          <Title order={3}>
+            שחקנים ({players.filter((p) => p.status === "participate").length}
             {players.length})
           </Title>
-          <Container fluid className={styles.playersList}>
+          <Container
+            fluid
+            className={styles.playersList}
+            style={{ padding: "0px" }}
+          >
             {players.map((player, index) => (
               <Card
                 key={index}
@@ -104,15 +116,14 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
               </Card>
             ))}
             <Card className={styles.addPlayerCard} onClick={onAddPlayer}>
-              <IconPlus size={30} />
-              <Text>Add Player</Text>
+              <Text>הוסף שחקן</Text>
+              <IconShirt />
             </Card>
           </Container>
         </section>
 
-        {/* Teams Section */}
         <section className={styles.teamsSection}>
-          <Title order={4}>קבוצות</Title>
+          <Title order={3}>קבוצות</Title>
           <Grid columns={12} gutter="lg">
             {game.teams.map((team, index) => (
               <Grid.Col key={index} span={4}>
@@ -127,12 +138,12 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
           </Grid>
           <Button
             className={styles.shuffleButton}
-            leftIcon={<IconArrowsShuffle />}
             variant="light"
             color="violet"
             onClick={onShuffleTeams}
           >
-            Shuffle Teams
+            <Text style={{marginLeft: "8px"}}>צור כוחות הוגנים</Text>
+            <IconArrowsShuffle />
           </Button>
         </section>
       </Container>
