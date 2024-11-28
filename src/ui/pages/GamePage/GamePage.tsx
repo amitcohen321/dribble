@@ -9,21 +9,17 @@ import {
   Box,
 } from "@mantine/core";
 import {
-  IconPlus,
   IconArrowsShuffle,
   IconShare,
   IconShirt,
+  IconGpsFilled,
+  IconCreditCard,
 } from "@tabler/icons-react";
 import styles from "./GamePage.module.css";
 import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
 
 const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
-  const user = {
-    firstName: "עמית",
-    profileImage:
-      "https://images.unsplash.com/photo-1612834787644-8b2b4e1f2c6b",
-  };
   const game = {
     name: "משחק 1",
     date: "2021-06-01",
@@ -46,7 +42,18 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
     { name: "שחקן1", status: "בספסל" },
     { name: "שחקן1", status: "במגרש" },
     { name: "שחקן1", status: "בספסל" },
-
+    { name: "שחקן1", status: "במגרש" },
+    { name: "שחקן1", status: "בספסל" },
+    { name: "שחקן1", status: "במגרש" },
+    { name: "שחקן1", status: "בספסל" },
+    { name: "שחקן1", status: "במגרש" },
+    { name: "שחקן1", status: "בספסל" },
+    { name: "שחקן1", status: "במגרש" },
+    { name: "שחקן1", status: "בספסל" },
+    { name: "שחקן1", status: "במגרש" },
+    { name: "שחקן1", status: "בספסל" },
+    { name: "שחקן1", status: "במגרש" },
+    { name: "שחקן1", status: "בספסל" },
   ];
 
   return (
@@ -79,19 +86,21 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
                 game.location
               )}`}
               target="_blank"
-              variant="light"
               color="violet"
               className={styles.actionButtonMaps}
             >
-              ניווט למגרש
+              <Text style={{ marginLeft: "15px" }}> ניווט למגרש</Text>
+              <IconGpsFilled />
             </Button>
+
             <Button
               variant="filled"
               color="violet"
               onClick={() => alert("Payment link clicked")}
               className={styles.actionButtonPayment}
             >
-              תשלום
+              <Text style={{ marginLeft: "45px" }}> תשלום</Text>
+              <IconCreditCard />
             </Button>
           </Box>
         </section>
@@ -124,6 +133,14 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
 
         <section className={styles.teamsSection}>
           <Title order={3}>קבוצות</Title>
+          <Button
+            className={styles.shuffleButton}
+            color="violet"
+            onClick={onShuffleTeams}
+          >
+            <Text style={{ marginLeft: "8px" }}>צור כוחות הוגנים</Text>
+            <IconArrowsShuffle />
+          </Button>
           <Grid columns={12} gutter="lg">
             {game.teams.map((team, index) => (
               <Grid.Col key={index} span={4}>
@@ -136,15 +153,6 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
               </Grid.Col>
             ))}
           </Grid>
-          <Button
-            className={styles.shuffleButton}
-            variant="light"
-            color="violet"
-            onClick={onShuffleTeams}
-          >
-            <Text style={{marginLeft: "8px"}}>צור כוחות הוגנים</Text>
-            <IconArrowsShuffle />
-          </Button>
         </section>
       </Container>
       <Footer />
