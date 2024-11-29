@@ -7,10 +7,12 @@
 }
 
 .content {
-    max-width: 95% !important;
-    min-width: 95% !important;
+    /* max-width: 95% !important;
+    min-width: 95% !important; */
     flex: 1;
     padding: 20px;
+    margin-right: 40px !important;
+    margin-left: 40px !important;
     overflow-y: auto;
 }
 
@@ -47,6 +49,17 @@
     height: 80px;
     display: flex;
     align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Added box-shadow */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Smooth hover effect */
+}
+
+.playerCard:hover {
+    transform: translateY(-5px);
+    /* Slight hover lift */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
 }
 
 .addPlayerCard {
@@ -54,7 +67,13 @@
     align-items: center;
     cursor: pointer;
     background-color: #4CAF50 !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Added box-shadow */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Smooth hover effect */
 }
+
+
 
 .participate {
     border: 2px solid green;
@@ -71,8 +90,19 @@
 .teamBox {
     background-color: white;
     border-radius: 8px;
-    padding: 10px;
+    padding: 0px 0px 10px 0px !important;
     text-align: center;
+
+}
+
+.teamTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #9088e63d;
+    margin-bottom: 10px !important;
+    padding: 10px 0px 10px 0px !important;
 }
 
 .shuffleButton {
@@ -88,7 +118,7 @@
 
 .gameMetaContainer {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
 
 .shareButton {
@@ -107,7 +137,6 @@ h3 {
 }
 
 @media (max-width: 480px) {
-
     .actionsContainer {
         width: 100%;
         margin-top: 25px;

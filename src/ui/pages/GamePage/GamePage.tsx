@@ -11,9 +11,10 @@ import {
 import {
   IconArrowsShuffle,
   IconShare,
-  IconShirt,
+  IconShirtFilled,
   IconGpsFilled,
   IconCreditCard,
+  IconPlayFootball,
 } from "@tabler/icons-react";
 import styles from "./GamePage.module.css";
 import Header from "../../layout/Header/Header";
@@ -38,23 +39,29 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
   };
 
   const players = [
-    { name: "שחקן1", status: "במגרש" },
-    { name: "שחקן1", status: "בספסל" },
-    { name: "שחקן1", status: "במגרש" },
-    { name: "שחקן1", status: "בספסל" },
-    { name: "שחקן1", status: "במגרש" },
-    { name: "שחקן1", status: "בספסל" },
-    { name: "שחקן1", status: "במגרש" },
-    { name: "שחקן1", status: "בספסל" },
-    { name: "שחקן1", status: "במגרש" },
-    { name: "שחקן1", status: "בספסל" },
-    { name: "שחקן1", status: "במגרש" },
-    { name: "שחקן1", status: "בספסל" },
-    { name: "שחקן1", status: "במגרש" },
-    { name: "שחקן1", status: "בספסל" },
-    { name: "שחקן1", status: "במגרש" },
-    { name: "שחקן1", status: "בספסל" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "ספסל" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "ספסל" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "מחליף" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "מחליף" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "מחליף" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "ספסל" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "ספסל" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "ספסל" },
   ];
+
+  const colorMapping: { [key: number]: string } = {
+    1: "white",
+    2: "black",
+    3: "orange",
+  };
 
   return (
     <div className={styles.container}>
@@ -106,7 +113,7 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
         </section>
 
         <section className={styles.playersSection}>
-          <Title order={3}>
+          <Title style={{ textAlign: "right" }} order={3}>
             שחקנים ({players.filter((p) => p.status === "participate").length}
             {players.length})
           </Title>
@@ -126,13 +133,15 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
             ))}
             <Card className={styles.addPlayerCard} onClick={onAddPlayer}>
               <Text>הוסף שחקן</Text>
-              <IconShirt />
+              <IconPlayFootball />
             </Card>
           </Container>
         </section>
 
         <section className={styles.teamsSection}>
-          <Title order={3}>קבוצות</Title>
+          <Title style={{ textAlign: "right" }} order={3}>
+            קבוצות
+          </Title>
           <Button
             className={styles.shuffleButton}
             color="violet"
@@ -145,7 +154,10 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
             {game.teams.map((team, index) => (
               <Grid.Col key={index} span={4}>
                 <Card className={styles.teamBox}>
-                  <Text>Team {index + 1}</Text>
+                  <Text className={styles.teamTitle}>
+                    קבוצה {index + 1}
+                    <IconShirtFilled color={colorMapping[index + 1]} />
+                  </Text>
                   {team.players.map((player, idx) => (
                     <Text key={idx}>{player}</Text>
                   ))}
