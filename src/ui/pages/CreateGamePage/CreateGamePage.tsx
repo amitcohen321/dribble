@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Title, TextInput, Button, Textarea } from "@mantine/core";
+import { Container, Title, TextInput, Button } from "@mantine/core";
 import { DateInput, TimeInput } from "@mantine/dates";
 import { IconCircleCheck, IconPlayFootball } from "@tabler/icons-react";
 import Header from "../../layout/Header/Header";

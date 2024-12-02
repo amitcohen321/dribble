@@ -9,6 +9,7 @@ import CreateGamePage from "./ui/pages/CreateGamePage/CreateGamePage";
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "./theme";
+import AddPlayerModal from "./ui/modals/AddPlayerModal/AddPlayerModal";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -19,6 +20,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/game/:id" element={<GamePage />} />
           <Route path="/create-game" element={<CreateGamePage />} />
+          <Route path="/add-player" element={<AddPlayerModal />} />
         </Routes>
       </BrowserRouter>
     </MantineProvider>
