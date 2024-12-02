@@ -40,21 +40,21 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
 
   const players = [
     { name: "שחקן1", status: "מגרש" },
-    { name: "שחקן1", status: "ספסל" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "מגרש" },
+    { name: "שחקן1", status: "מגרש" },
     { name: "שחקן1", status: "מגרש" },
     { name: "שחקן1", status: "ספסל" },
-    { name: "שחקן1", status: "מגרש" },
-    { name: "שחקן1", status: "מחליף" },
-    { name: "שחקן1", status: "מגרש" },
-    { name: "שחקן1", status: "מחליף" },
-    { name: "שחקן1", status: "מגרש" },
-    { name: "שחקן1", status: "מחליף" },
-    { name: "שחקן1", status: "מגרש" },
     { name: "שחקן1", status: "ספסל" },
-    { name: "שחקן1", status: "מגרש" },
     { name: "שחקן1", status: "ספסל" },
-    { name: "שחקן1", status: "מגרש" },
     { name: "שחקן1", status: "ספסל" },
+    { name: "שחקן1", status: "ספסל" },
+    { name: "שחקן1", status: "ספסל" },
+    { name: "שחקן1", status: "יציע" },
+    { name: "שחקן1", status: "יציע" },
+    { name: "שחקן1", status: "יציע" },
+    { name: "שחקן1", status: "יציע" },
+    { name: "שחקן1", status: "יציע" },
   ];
 
   const colorMapping: { [key: number]: string } = {

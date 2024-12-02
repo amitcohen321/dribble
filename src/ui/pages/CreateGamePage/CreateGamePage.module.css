@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f7f7f7;
+    direction: rtl;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.formWrapper {
+    width: 100%;
+    max-width: 1000px;
+    /* Increased width */
+    min-width: 780px;
+    margin-top: -150px;
+    /* Moved higher in the screen */
+}
+
+.formTitle {
+    text-align: center;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #5c28a0;
+    margin-bottom: 10px !important;
+}
+
+.createGameForm {
+    background-color: #29114e;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: #dbb4ff;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.formInput {
+    width: 100%;
+}
+
+.formInput :global(.mantine-TextInput-label),
+.formInput :global(.mantine-Textarea-label),
+.formInput :global(.mantine-DateInput-label),
+.formInput :global(.mantine-TimeInput-label) {
+    color: #dbb4ff !important;
+}
+
+.formInput :global(.mantine-Input-input) {
+    background-color: #5c28a0 !important;
+    color: #f2e7fe !important;
+    border-color: #7938cc !important;
+}
+
+.disclaimer {
+    text-align: right;
+    margin-bottom: 20px;
+    color: white;
+    /* Changed to white */
+    background-color: transparent;
+}
+
+.submitButton {
+    margin-top: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #9a5eff !important;
+}
+
+.submitButton:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    background-color: #7938cc !important;
+}
+
+@media (max-width: 480px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formWrapper {
+        max-width: 100%;
+        margin-top: 0;
+        /* Reset margin for mobile */
+    }
+
+    .formWrapper {
+        height: 100%;
+        min-width: 0;
+    }
+}
