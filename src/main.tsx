@@ -6,10 +6,10 @@ import AuthPage from "./ui/pages/AuthPage/AuthPage";
 import DashboardPage from "./ui/pages/DashboardPage/DashboardPage";
 import GamePage from "./ui/pages/GamePage/GamePage";
 import CreateGamePage from "./ui/pages/CreateGamePage/CreateGamePage";
+import AddPlayerModal from "./ui/modals/AddPlayerModal/AddPlayerModal";
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "./theme";
-import AddPlayerModal from "./ui/modals/AddPlayerModal/AddPlayerModal";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -18,7 +18,12 @@ createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/game/:id" element={<GamePage />} />
+          <Route
+            path="/game/:id"
+            element={
+              <GamePage onAddPlayer={() => {}} onShuffleTeams={() => {}} />
+            }
+          />
           <Route path="/create-game" element={<CreateGamePage />} />
           <Route path="/add-player" element={<AddPlayerModal />} />
         </Routes>
