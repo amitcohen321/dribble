@@ -65,6 +65,30 @@ const GamePage = ({ role = "admin", onAddPlayer, onShuffleTeams }) => {
       phoneNumber: "054-1234567",
       participationStatus: "מגרש",
     },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
   ];
 
   const colorMapping: { [key: number]: string } = {

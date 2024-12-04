@@ -4,7 +4,8 @@ import { DateInput, TimeInput } from "@mantine/dates";
 import { IconCircleCheck, IconPlayFootball } from "@tabler/icons-react";
 import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
-import styles from "./CreateGamePage.module.css";
+import styles from "./CreateGameModal.module.css";
+import ModalContainer from "../ModalContainer/ModalContainer";
 
 const CreateGamePage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const CreateGamePage: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <ModalContainer opened={true} onClose={() => {}} title="יצירת משחק">
       <Header />
       <Container fluid className={styles.content}>
         <div className={styles.formWrapper}>
@@ -109,7 +110,7 @@ const CreateGamePage: React.FC = () => {
         </div>
       </Container>
       <Footer />
-    </div>
+    </ModalContainer>
   );
 };
 

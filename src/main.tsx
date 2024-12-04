@@ -5,11 +5,12 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import AuthPage from "./ui/pages/AuthPage/AuthPage";
 import DashboardPage from "./ui/pages/DashboardPage/DashboardPage";
 import GamePage from "./ui/pages/GamePage/GamePage";
-import CreateGamePage from "./ui/pages/CreateGamePage/CreateGamePage";
+import CreateGamePage from "./ui/modals/CreateGameModal/CreateGameModal";
 import AddPlayerModal from "./ui/modals/AddPlayerModal/AddPlayerModal";
 import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "./theme";
+import SetPowerModal from "./ui/modals/SetPowerModal/SetPowerModal";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")!).render(
           />
           <Route path="/create-game" element={<CreateGamePage />} />
           <Route path="/add-player" element={<AddPlayerModal />} />
+          <Route path="/set-power" element={<SetPowerModal />} />
         </Routes>
       </BrowserRouter>
     </MantineProvider>

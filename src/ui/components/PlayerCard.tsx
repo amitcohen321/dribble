@@ -37,17 +37,4 @@ export function PlayerCard({
   );
 }
 
-{
-  /* <Card
-key={index}
-className={`
-  ${styles.playerCard} 
-  ${styles[player.pariticpationStatus]} 
-  ${role === "admin" ? styles.clickcursor : ""}
-`}
->
-<Text>{player.name}</Text>
-<Text>{player.status}</Text>
-</Card>
-))} */
-}
+
