@@ -14,17 +14,19 @@ import {
   IconShirtFilled,
   IconGpsFilled,
   IconCreditCard,
-  IconPlayFootball,
+  IconUserPlus,
 } from "@tabler/icons-react";
 import styles from "./GamePage.module.css";
 import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
+import { PlayerCard } from "../../components/PlayerCard";
 
-const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
+const GamePage = ({ role = "admin", onAddPlayer, onShuffleTeams }) => {
   const game = {
     name: "משחק 1",
     date: "2021-06-01",
-    location: "מגרש 1",
+    time: "19:00",
+    location: "וינטר, רמת-גן",
     teams: [
       {
         players: ["שחקן 1", "שחקן 2", "שחקן 3"],
@@ -39,22 +41,30 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
   };
 
   const players = [
-    { name: "שחקן1", status: "מגרש" },
-    { name: "שחקן1", status: "מגרש" },
-    { name: "שחקן1", status: "מגרש" },
-    { name: "שחקן1", status: "מגרש" },
-    { name: "שחקן1", status: "מגרש" },
-    { name: "שחקן1", status: "ספסל" },
-    { name: "שחקן1", status: "ספסל" },
-    { name: "שחקן1", status: "ספסל" },
-    { name: "שחקן1", status: "ספסל" },
-    { name: "שחקן1", status: "ספסל" },
-    { name: "שחקן1", status: "ספסל" },
-    { name: "שחקן1", status: "יציע" },
-    { name: "שחקן1", status: "יציע" },
-    { name: "שחקן1", status: "יציע" },
-    { name: "שחקן1", status: "יציע" },
-    { name: "שחקן1", status: "יציע" },
+    {
+      firstName: "עמית",
+      lastName: "כהן",
+      phoneNumber: "054-1234567",
+      participationStatus: "ספסל",
+    },
+    {
+      firstName: "תום",
+      lastName: "דיקורי",
+      phoneNumber: "054-1234567",
+      participationStatus: "ספסל",
+    },
+    {
+      firstName: "אייל",
+      lastName: "אלימלך",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
   ];
 
   const colorMapping: { [key: number]: string } = {
@@ -71,19 +81,22 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
           <div className={styles.gameMetaContainer}>
             <Box className={styles.gameDataContainer}>
               <Title order={3}>{game.name}</Title>
-              <Text>תאריך: {game.date}</Text>
-              <Text>מיקום: {game.location}</Text>
+              <Text> {game.date}</Text>
+              <Text> {game.time}</Text>
+              <Text> {game.location}</Text>
             </Box>
-            <ActionIcon
-              className={styles.shareButton}
-              size={60}
-              radius="xl"
-              variant="light"
-              color="violet"
-            >
-              {" "}
-              <IconShare />{" "}
-            </ActionIcon>
+            {role === "admin" && (
+              <ActionIcon
+                className={styles.shareButton}
+                size={60}
+                radius="xl"
+                variant="light"
+                color="violet"
+              >
+                {" "}
+                <IconShare />{" "}
+              </ActionIcon>
+            )}
           </div>
 
           <Box className={styles.actionsContainer}>
@@ -114,27 +127,42 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
 
         <section className={styles.playersSection}>
           <Title style={{ textAlign: "right" }} order={3}>
-            שחקנים ({players.filter((p) => p.status === "participate").length}
+            שחקנים (
+            {
+              players.filter((p) => p.participationStatus === "participate")
+                .length
+            }
             {players.length})
           </Title>
+
+          <Button
+            className={styles.actionButtonAddPlayer}
+            onClick={onAddPlayer}
+            variant="filled"
+            color="violet"
+          >
+            {role === "admin" ? (
+              <Text style={{ marginLeft: "10px" }}> הוסף שחקן</Text>
+            ) : (
+              <Text style={{ marginLeft: "10px" }}> הירשם למשחק</Text>
+            )}
+            <IconUserPlus />
+          </Button>
+
           <Container
             fluid
             className={styles.playersList}
-            style={{ padding: "0px" }}
+            style={{ padding: "10px" }}
           >
             {players.map((player, index) => (
-              <Card
+              <PlayerCard
                 key={index}
-                className={`${styles.playerCard} ${styles[player.status]}`}
-              >
-                <Text>{player.name}</Text>
-                <Text>{player.status}</Text>
-              </Card>
+                firstName={player.firstName}
+                lastName={player.lastName}
+                phoneNumber={player.phoneNumber}
+                participationStatus={player.participationStatus}
+              />
             ))}
-            <Card className={styles.addPlayerCard} onClick={onAddPlayer}>
-              <Text>הוסף שחקן</Text>
-              <IconPlayFootball />
-            </Card>
           </Container>
         </section>
 
@@ -142,14 +170,17 @@ const GamePage = ({ onAddPlayer, onShuffleTeams }) => {
           <Title style={{ textAlign: "right" }} order={3}>
             קבוצות
           </Title>
-          <Button
-            className={styles.shuffleButton}
-            color="violet"
-            onClick={onShuffleTeams}
-          >
-            <Text style={{ marginLeft: "8px" }}>צור כוחות הוגנים</Text>
-            <IconArrowsShuffle />
-          </Button>
+          {role === "admin" && (
+            <Button
+              className={styles.shuffleButton}
+              color="violet"
+              onClick={onShuffleTeams}
+            >
+              <Text style={{ marginLeft: "8px" }}>צור כוחות הוגנים</Text>
+              <IconArrowsShuffle />
+            </Button>
+          )}
+
           <Grid columns={12} gutter="lg">
             {game.teams.map((team, index) => (
               <Grid.Col key={index} span={4}>

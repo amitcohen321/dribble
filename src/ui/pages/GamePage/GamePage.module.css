@@ -1,3 +1,26 @@
+/* Global Settings */
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h3 {
+    margin-bottom: 5px !important;
+}
+
+.clickcursor {
+    cursor: pointer;
+}
+
+/* Container Styles */
 .container {
     display: flex;
     flex-direction: column;
@@ -10,10 +33,10 @@
     max-width: 95%;
     flex: 1;
     padding: 20px;
-
     overflow-y: auto;
 }
 
+/* Section Styles */
 .gameDetailsSection,
 .playersSection,
 .teamsSection {
@@ -21,22 +44,62 @@
     text-align: right;
 }
 
-.googleMapsButton {
+.playersSection,
+.teamsSection {
+    text-align: right;
+}
+
+/* Button Styles */
+.googleMapsButton,
+.shuffleButton {
     margin: 10px 0;
+}
+
+.actionButtonMaps,
+.actionButtonPayment,
+.actionButtonAddPlayer {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Box Styles */
+.paymentBox,
+.teamBox {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 .paymentBox {
     margin-top: 10px;
-    padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 8px;
     background-color: #fafafa;
 }
 
+.teamBox {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.teamTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #9088e63d;
+    padding: 10px 0;
+    margin-bottom: 15px;
+}
+
+/* Player Styles */
 .playersList {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
 }
 
 .playerCard {
@@ -45,7 +108,6 @@
     border-radius: 8px;
     width: 150px;
     min-width: 120px;
-    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,51 +120,15 @@
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-.addPlayerCard {
-    width: 150px;
-    min-width: 120px;
-    cursor: pointer;
-    background-color: #4CAF50 !important;
-    display: flex;
-    align-items: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
 .participate {
     border: 2px solid green;
 }
 
-.substitute {
+.bench {
     border: 2px solid orange;
 }
 
-.bench {
-    border: 2px solid red;
-}
-
-.teamBox {
-    background-color: white;
-    border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-}
-
-.teamTitle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    background-color: #9088e63d;
-    padding: 10px 0px;
-    margin-bottom: 15px;
-}
-
-.shuffleButton {
-    margin-bottom: 10px;
-}
-
+/* Actions Container */
 .actionsContainer {
     display: flex;
     flex-direction: column;
@@ -110,6 +136,7 @@
     margin-top: 25px;
 }
 
+/* Game Meta Container */
 .gameMetaContainer {
     display: flex;
     justify-content: space-between;
@@ -119,41 +146,11 @@
     top: 10px;
 }
 
-.actionButtonMaps,
-.actionButtonPayment {
-    width: 100%;
-    text-align: center;
-    margin: 5px 0;
-}
-
-h3 {
-    margin-bottom: 5px !important;
-}
-
-/* Ensure full responsiveness */
-@media (max-width: 1024px) {
+/* Responsive Styles */
+@media (max-width: 480px) {
     .playerCard {
         width: 30%;
         min-width: 100px;
-    }
-
-    .addPlayerCard {
-        width: 30%;
-    }
-
-    .actionsContainer {
-        width: 80%;
-    }
-}
-
-@media (max-width: 768px) {
-    .playersList {
-        justify-content: center;
-        /* Center items on smaller screens */
-    }
-
-    .teamBox {
-        margin-bottom: 20px;
     }
 
     .actionsContainer {
@@ -162,41 +159,8 @@ h3 {
 
     .actionButtonMaps,
     .actionButtonPayment,
-    .shuffleButton {
+    .shuffleButton,
+    .actionButtonAddPlayer {
         width: 100% !important;
     }
-}
-
-@media (max-width: 480px) {
-    .playerCard {
-        width: 150px;
-        /* Larger width for very small screens */
-    }
-
-    .addPlayerCard {
-        width: 150px;
-    }
-
-    .playersSection {
-        text-align: center;
-    }
-
-    .teamsSection {
-        text-align: center;
-    }
-}
-
-/* Global Settings for Better Scaling */
-html {
-    font-size: 16px;
-    /* Set a baseline for scalable text */
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
 }

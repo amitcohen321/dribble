@@ -1,16 +1,10 @@
 import React, { useState } from "react";
-import {
-  Title,
-  TextInput,
-  Button,
-  Select,
-  NumberInput,
-} from "@mantine/core";
+import { Title, TextInput, Button, Select, NumberInput } from "@mantine/core";
 import { IconCircleCheck, IconPlayFootball } from "@tabler/icons-react";
 import styles from "./AddPlayerModal.module.css";
 import ModalContainer from "../ModalContainer/ModalContainer";
 
-const AddPlayerModal: React.FC = () => {
+const AddPlayerModal: React.FC = ({ role }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -73,28 +67,32 @@ const AddPlayerModal: React.FC = () => {
               required
               className={styles.formInput}
             />
-            <NumberInput
-              label="יכולת התקפה"
-              value={formData.attackAbility}
-              onChange={(value) =>
-                handleInputChange("attackAbility", value || 0)
-              }
-              min={0}
-              max={10}
-              required
-              className={styles.formInput}
-            />
-            <NumberInput
-              label="יכולת הגנה"
-              value={formData.defenseAbility}
-              onChange={(value) =>
-                handleInputChange("defenseAbility", value || 0)
-              }
-              min={0}
-              max={10}
-              required
-              className={styles.formInput}
-            />
+            {role === "admin" && (
+              <>
+                <NumberInput
+                  label="יכולת התקפה"
+                  value={formData.attackAbility}
+                  onChange={(value) =>
+                    handleInputChange("attackAbility", value || 0)
+                  }
+                  min={0}
+                  max={10}
+                  required
+                  className={styles.formInput}
+                />
+                <NumberInput
+                  label="יכולת הגנה"
+                  value={formData.defenseAbility}
+                  onChange={(value) =>
+                    handleInputChange("defenseAbility", value || 0)
+                  }
+                  min={0}
+                  max={10}
+                  required
+                  className={styles.formInput}
+                />
+              </>
+            )}
           </div>
 
           <Button

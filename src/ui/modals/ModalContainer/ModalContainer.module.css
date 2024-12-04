@@ -1,6 +1,7 @@
 /* ModalContainer styles */
 .modal {
     /* Optional: Define a custom modal appearance */
+    direction: rtl;
 }
 
 .modalOverlay {
