@@ -1,0 +1,6 @@
+[submodule "packages/backend"]
+	path = packages/backend
+	url = https://github.com/amitcohen321/dribble.git
+[submodule "packages/shared"]
+	path = packages/shared
+	url = https://github.com/amitcohen321/dribble.git
