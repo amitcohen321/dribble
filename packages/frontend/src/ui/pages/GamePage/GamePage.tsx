@@ -19,7 +19,7 @@ import {
 import styles from "./GamePage.module.css";
 import Header from "../../layout/Header/Header";
 import Footer from "../../layout/Footer/Footer";
-import { PlayerCard } from "../../components/PlayerCard";
+import { PlayerCard } from "../../components/PlayerCard/PlayerCard";
 
 const GamePage = ({ role = "admin", onAddPlayer, onShuffleTeams }) => {
   const game = {
@@ -89,6 +89,42 @@ const GamePage = ({ role = "admin", onAddPlayer, onShuffleTeams }) => {
       phoneNumber: "054-1234567",
       participationStatus: "מגרש",
     },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
+    {
+      firstName: "אבשלום",
+      lastName: "נתן",
+      phoneNumber: "054-1234567",
+      participationStatus: "מגרש",
+    },
   ];
 
   const colorMapping: { [key: number]: string } = {
@@ -117,8 +153,7 @@ const GamePage = ({ role = "admin", onAddPlayer, onShuffleTeams }) => {
                 variant="light"
                 color="violet"
               >
-                {" "}
-                <IconShare />{" "}
+                <IconShare />
               </ActionIcon>
             )}
           </div>
