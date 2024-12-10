@@ -6,5 +6,10 @@
   ],
   "compilerOptions": {
     "strict": true
+  },
+  "paths": {
+    "@shared/prisma": ["shared/prisma/generated"],
+    "@shared/dtos": ["shared/dtos"],
+    "@shared/validations": ["shared/validations"]
   }
 }

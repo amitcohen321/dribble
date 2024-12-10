@@ -13,7 +13,7 @@ import { theme } from "./theme";
 import SetPowerModal from "./ui/modals/SetPowerModal/SetPowerModal";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+  <StrictMode> 
     <MantineProvider theme={theme}>
       <BrowserRouter>
         <Routes>
