@@ -9,7 +9,7 @@
 
 /* Left Section (Dark Purple Square) */
 .imageSection {
-    background-image: url("../../../assets/auth-page/dribbler-auth-page.png");
+    background-image: url("../../../assets/auth-page/dribble-auth-page.png");
     background-size: cover;
     /* Makes the image cover the full section */
     background-position: right;

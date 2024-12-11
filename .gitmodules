@@ -1,6 +1,9 @@
 [submodule "packages/backend"]
-	path = packages/backend
-	url = https://github.com/amitcohen321/dribble.git
+path = packages/backend
+url = https://github.com/amitcohen321/dribble.git
 [submodule "packages/shared"]
-	path = packages/shared
-	url = https://github.com/amitcohen321/dribble.git
+path = packages/shared
+url = https://github.com/amitcohen321/dribble.git
+[submodule "packages/frontend"]
+path = packages/shared
+url = https://github.com/amitcohen321/dribble.git

@@ -1,4 +1,4 @@
-import DribbleLogo from "../../../assets/dribble-logo.png";
+import dribble from "../../../assets/dribble-logo.png";
 import { Text, Group, Avatar } from "@mantine/core"; // Import Group and Avatar
 import styles from "./Header.module.css";
 
@@ -16,7 +16,7 @@ const Header = () => {
           <Avatar src={user.profileImage} radius="xl" />
           <Text className={styles.helloMessage}> {user.firstName} </Text>
         </Group>
-        <img src={DribbleLogo} alt="Logo" className={styles.logo} />
+        <img src={dribble} alt="Logo" className={styles.logo} />
       </div>
     </header>
   );
